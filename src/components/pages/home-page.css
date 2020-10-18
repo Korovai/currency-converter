@@ -1,0 +1,78 @@
+.wrCurrencyBlock {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	height: 50vh;
+}
+
+.wrBaseCurrency {
+	background: #7AE17A;
+	color: #fff;
+}
+
+.wrConvertedCurrency {
+	background: #fff;
+	color: #7AE17A;
+}
+
+.baseCurrency {
+	border: none;
+	border-radius: 10px;
+	outline: none;
+	font-size: 32px;
+	color: #7AE17A;
+	text-align: center;
+}
+
+.convertedCurrency {
+	border: none;
+	border-bottom: 1px solid #7AE17A;
+	outline: none;
+	background: transparent;
+	font-size: 32px;
+	color: #7AE17A;
+	text-align: center;
+}
+
+.currencyCode {
+	font-size: 24px;
+}
+
+.currencyCode1 {
+	padding-bottom: 120px;
+}
+
+.wrCurrencyCode2 {
+	padding-top: 120px;
+	color: #7AE17A;
+	text-decoration: none;
+}
+
+.currencyCode2 {
+	display: flex;
+}
+
+.circleBlock {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 150px;
+	height: 150px;
+	border: 15px solid #7AE17A;
+	border-radius: 50%;
+	background: #fff;
+}
+
+.arrowDown {
+	color: #7AE17A;
+}
+
+.circleBlock .MuiSvgIcon-root {
+	width: 100%;
+	height: 100%;
+}

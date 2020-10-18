@@ -1,0 +1,43 @@
+.wrCurrencyList {
+	min-height: 100vh;
+	background: #7AE17A;
+	color: #fff;
+	text-align: center;
+}
+
+.wrHeaderCurrencyList {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	padding: 30px 30px 15px 30px;
+}
+
+.wrHomeBtn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	margin-right: 30px;
+	text-decoration: none;
+	color: #fff;
+}
+
+.wrHomeBtn:hover {
+	background: #fff;
+	color: #7AE17A;
+}
+
+
+.titleCurrencyList {
+	display: block;
+	font-size: 24px;
+}
+
+.currencyList {
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin: 0;
+	padding: 15px 30px 30px 30px;
+}

@@ -1,0 +1,27 @@
+.currencyListItem {
+	display: block;
+	margin: 15px 5px;
+	text-decoration: none;
+}
+
+.currencyListItem li {
+	border: 1px solid #fff;
+	border-radius: 5px;
+	padding: 5px;
+	background: #fff;
+	list-style-type: none;
+	color: #7AE17A;
+	text-align: center;
+	cursor: pointer;
+}
+
+.currencyListItem li:hover {
+	background: #7AE17A;
+	color: #fff;
+}
+
+.wrLetter {
+  border-bottom: 1px solid #fff;
+	font-size: 32px;
+	text-align: right;
+}

@@ -12,9 +12,18 @@ SPA для конвертирования валют. Для получения 
 
 `$ npm install @material-ui/core`
 
-- Разработана базова структура React приложения.
+- Установка Material UI Icons.
+
+`$ npm install @material-ui/icons`
+
 - Инициализация Redux. Создание новых каталогов.
 
 `$ npm install redux react-redux`
+
+- Инициализация React Router Dom.
+
+`$ npm install react-router-dom`
+
+- Конвертация валюты.
 
 **Остальные этапы создания приложения будут добавляться по мере развития проекта*.
