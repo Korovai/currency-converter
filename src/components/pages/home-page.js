@@ -13,7 +13,8 @@ import './home-page.css';
 class HomePage extends Component {	
 
 	handleChange = (e) => {
-		this.props.getValue(e.target.value);
+    const inputValue = (e.target.validity.valid) ? e.target.value : '';
+		this.props.getValue(inputValue);
 	}
 	
 	render() {
@@ -26,7 +27,7 @@ class HomePage extends Component {
 		return (
 			<div className="wrApp">
 				<div className="wrCurrencyBlock wrBaseCurrency">
-					<div><input onChange={this.handleChange} type="text" className="baseCurrency" defaultValue={value1} /></div>
+					<input onChange={this.handleChange.bind(this)} type="text" pattern="[0-9.]+" className="baseCurrency" value={value1} />
 					<span className="currencyCode currencyCode1">USA</span>
 				</div>
 
