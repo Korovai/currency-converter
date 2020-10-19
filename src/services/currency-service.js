@@ -3,26 +3,25 @@ export default class CurrencyService {
 	_apiCurrency = 'https://openexchangerates.org/api/latest.json?app_id=';
 
 	getResource = async (url) => {
-		const res = await fetch(`${this._apiCurrency}${url}`);
+	  const res = await fetch(`${this._apiCurrency}${url}`)
 
-		if(!res.ok) {
-			throw new Error(`Could not fetch ${this._apiCurrency}${url}, received ${res.status}`)
-		}
+	  if (!res.ok) throw new Error(`Could not fetch ${this._apiCurrency}${url}, received ${res.status}`)
 
-		return await res.json();
+	  const data = await res.json()
+	  return data
 	}
 
 	getCurrency = async () => {
-		const resCurrency = await this.getResource(`${this._apiId}`);
-		const arrayRes = [];
-		for(const [code, value] of Object.entries(resCurrency.rates)) {
-			const newObj = {
-				code,
-				value
-			}
-			arrayRes.push(newObj);
-		}
+	  const resCurrency = await this.getResource(`${this._apiId}`)
+	  const arrayRes = []
+	  for (const [code, value] of Object.entries(resCurrency.rates)) {
+	    const newObj = {
+	      code,
+	      value
+	    }
+	    arrayRes.push(newObj)
+	  }
 
-		return arrayRes;
+	  return arrayRes
 	}
-};
+}
