@@ -1,14 +1,19 @@
+// Base
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
+// Redux
 import { connect } from 'react-redux'
 import {
   currenciesLoaded,
   currencySelection
-} from '../../actions/index'
+} from '../../reducers/index'
 
+// Material-UI
 import ArrowBackIcon from '@material-ui/icons/ArrowBack'
 
+// Components
 import CurrencyService from '../../services/currency-service'
 import CurrencyListItem from '../currency-list-item/currency-list-item'
 import Spinner from '../spinner/spinner'
@@ -16,7 +21,13 @@ import Spinner from '../spinner/spinner'
 import './currency-list.css'
 
 class CurrencyList extends Component {
-  currencyService = new CurrencyService();
+
+  static propTypes = {
+    currenciesLoaded: PropTypes.elementType,
+    currency: PropTypes.array,
+    loading: PropTypes.bool,
+    onGetCurrency: PropTypes.elementType
+  }
 
   componentDidMount() {
     this.currencyService
@@ -24,6 +35,8 @@ class CurrencyList extends Component {
         this.props.currenciesLoaded(currency)
       })
   }
+
+  currencyService = new CurrencyService();
 
   render() {
     const { currency, loading, onGetCurrency } = this.props

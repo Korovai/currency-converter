@@ -1,3 +1,7 @@
+const FETCH_CURRENCIES_SUCCESS = 'FETCH_CURRENCIES_SUCCESS'
+const FETCH_CURRENCY_SUCCESS = 'FETCH_CURRENCY_SUCCESS'
+const FETCH_CURRENCY_VALUE = 'FETCH_CURRENCY_VALUE'
+
 const reducer = (state, action) => {
   if (state === undefined) {
     return {
@@ -11,7 +15,7 @@ const reducer = (state, action) => {
   }
 
   switch (action.type) {
-    case 'FETCH_CURRENCIES_SUCCESS':
+    case FETCH_CURRENCIES_SUCCESS:
       return {
         currency: action.payload,
         code: state.code,
@@ -20,7 +24,7 @@ const reducer = (state, action) => {
         valueRes: state.value1 * state.value2,
         loading: false
       }
-    case 'FETCH_CURRENCY_SUCCESS':
+    case FETCH_CURRENCY_SUCCESS:
       return {
         currency: state.currency,
         code: action.code,
@@ -30,11 +34,11 @@ const reducer = (state, action) => {
         loading: false
       }
 
-    case 'FETCH_CURRENCY_VALUE':
+    case FETCH_CURRENCY_VALUE:
       return {
         currency: state.currency,
         code: state.code,
-        value1: action.payload,
+        value1: +action.payload,
         value2: state.value2,
         valueRes: action.payload * state.value2,
         loading: true
@@ -45,3 +49,31 @@ const reducer = (state, action) => {
 }
 
 export default reducer
+
+const currenciesLoaded = (currency) => {
+  return {
+    type: 'FETCH_CURRENCIES_SUCCESS',
+    payload: currency
+  }
+}
+
+const currencySelection = (code, value) => {
+  return {
+    type: 'FETCH_CURRENCY_SUCCESS',
+    code,
+    value
+  }
+}
+
+const getValue = (value) => {
+  return {
+    type: 'FETCH_CURRENCY_VALUE',
+    payload: value
+  }
+}
+
+export {
+  currenciesLoaded,
+  currencySelection,
+  getValue
+}

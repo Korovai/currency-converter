@@ -1,12 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\public",
     "\\src",
     "\\src\\components",
-    "\\src\\components\\pages",
-    "\\src\\components\\spinner"
+    "\\src\\components\\app",
+    "\\src\\components\\pages"
   ],
-  "SelectedNode": "\\src\\components\\pages\\home-page.css",
+  "SelectedNode": "\\.eslintignore",
   "PreviewInSolutionExplorer": false
 }

@@ -1,5 +1,7 @@
+// Base
 import React from 'react'
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
 import './currency-list-item.css'
 
@@ -13,15 +15,15 @@ const CurrencyListItem = ({ data, onGetCurrency }) => {
       return (
         <div key={code}>
           <div className="wrLetter">{firstLetter}</div>
-          <Link to="/" className="currencyListItem">
-            <li onClick={() => onGetCurrency(code, value)}>{code}</li>
+          <Link onClick={() => onGetCurrency(code, value)} to="/" className="currencyListItem">
+            {code}
           </Link>
         </div>
       )
     }
     return (
-      <Link key={code} to="/" className="currencyListItem">
-        <li onClick={() => onGetCurrency(code, value)}>{code}</li>
+      <Link onClick={() => onGetCurrency(code, value)} key={code} to="/" className="currencyListItem">
+        {code}
       </Link>
     )
   })
@@ -31,6 +33,11 @@ const CurrencyListItem = ({ data, onGetCurrency }) => {
       {elements}
     </React.Fragment>
   )
+}
+
+CurrencyListItem.propTypes = {
+  data: PropTypes.array,
+  onGetCurrency: PropTypes.elementType
 }
 
 export default CurrencyListItem

@@ -4,7 +4,8 @@
 	text-decoration: none;
 }
 
-.currencyListItem li {
+.currencyListItem {
+	display: block;
 	border: 1px solid #fff;
 	border-radius: 5px;
 	padding: 5px;
@@ -13,9 +14,10 @@
 	color: #7AE17A;
 	text-align: center;
 	cursor: pointer;
+	text-decoration: none;
 }
 
-.currencyListItem li:hover {
+.currencyListItem:hover {
 	background: #7AE17A;
 	color: #fff;
 }

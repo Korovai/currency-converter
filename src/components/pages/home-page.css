@@ -25,6 +25,11 @@
 	text-align: center;
 }
 
+input.baseCurrency::-webkit-outer-spin-button,
+input.baseCurrency::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
 .convertedCurrency {
 	border: none;
 	border-bottom: 1px solid #7AE17A;
